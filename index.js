@@ -76,7 +76,7 @@ function updatePlayersList(players) {
     players.forEach(p => {
         const isMe = p.name === username ? ' (You)' : '';
         const role = p.isHost ? '👑' : '👤';
-        $('#stmp-players').append(\`<li><span>\${role} \${p.name}\${isMe}</span></li>\`);
+        $('#stmp-players').append(`<li><span>${role} ${p.name}${isMe}</span></li>`);
     });
 }
 
@@ -118,7 +118,7 @@ async function createRoom() {
             isHost = true;
             showRoom(roomCode);
             setStatus('connected', '● Hosting');
-            showNotification(\`Room created! Code: \${roomCode}\`);
+            showNotification(`Room created! Code: ${roomCode}`);
         });
 
         peer.on('connection', (conn) => {
@@ -127,7 +127,7 @@ async function createRoom() {
                     conn.username = data.username;
                     guests.push(conn);
                     broadcastPlayers();
-                    showNotification(\`\${data.username} joined\`);
+                    showNotification(`${data.username} joined`);
                 } else if (data.type === 'message') {
                     // Forward message to ST
                     appendVisualMessage(data.username, data.text, true);
@@ -140,7 +140,7 @@ async function createRoom() {
             conn.on('close', () => {
                 guests = guests.filter(g => g !== conn);
                 broadcastPlayers();
-                showNotification(\`\${conn.username} left\`);
+                showNotification(`${conn.username} left`);
             });
         });
 
@@ -224,18 +224,18 @@ async function joinRoom(code) {
 
 // ─── CHAT INTERCEPTION ──────────────────────────────────────────────────────
 function appendVisualMessage(senderName, text, isUserMsg) {
-    const chatHtml = \`
-        <div class="mes \${isUserMsg ? 'user_mes' : ''}" is_user="\${isUserMsg}">
-            <div class="mes_text"><strong>[\${senderName}]</strong> \${text}</div>
+    const chatHtml = `
+        <div class="mes ${isUserMsg ? 'user_mes' : ''}" is_user="${isUserMsg}">
+            <div class="mes_text"><strong>[${senderName}]</strong> ${text}</div>
         </div>
-    \`;
+    `;
     $('#chat').append(chatHtml);
     $('#chat').scrollTop($('#chat')[0].scrollHeight);
 }
 
 function forwardToST(senderName, text) {
     const context = getContext();
-    const formattedText = \`**[\${senderName}]:** \${text}\`;
+    const formattedText = `**[${senderName}]:** ${text}`;
     $('#send_textarea').val(formattedText);
     $('#send_but').click();
 }
