@@ -1,0 +1,286 @@
+/* ST Multiplayer Extension Styles */
+
+#stmp-panel {
+    background: var(--black50a, rgba(20, 20, 25, 0.6));
+    border: 1px solid var(--SmartThemeBorderColor, rgba(255, 255, 255, 0.1));
+    border-radius: 12px;
+    padding: 16px;
+    color: var(--text-color, #e0e0e0);
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.stmp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--SmartThemeBorderColor, rgba(255, 255, 255, 0.1));
+}
+
+.stmp-logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.stmp-status {
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.stmp-status.disconnected {
+    background: rgba(255, 60, 60, 0.2);
+    color: #ff5c5c;
+    border: 1px solid rgba(255, 60, 60, 0.3);
+}
+
+.stmp-status.connected {
+    background: rgba(60, 255, 120, 0.2);
+    color: #5cff7c;
+    border: 1px solid rgba(60, 255, 120, 0.3);
+}
+
+.stmp-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.stmp-section.hidden {
+    display: none !important;
+}
+
+.stmp-row {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+}
+
+.stmp-row input {
+    flex: 1;
+}
+
+#stmp-panel input[type="text"] {
+    background: var(--black70a, rgba(0, 0, 0, 0.5));
+    border: 1px solid var(--SmartThemeBorderColor, rgba(255, 255, 255, 0.2));
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: var(--text-color, #ffffff);
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#stmp-panel input[type="text"]:focus {
+    border-color: #64b5f6;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(100, 181, 246, 0.3);
+}
+
+.stmp-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: var(--text-color, #cccccc);
+    user-select: none;
+}
+
+.stmp-checkbox-label input[type="checkbox"] {
+    accent-color: #00f2fe;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.stmp-btn {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.stmp-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.stmp-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.stmp-btn.primary {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+}
+
+.stmp-btn.primary:hover {
+    background: linear-gradient(135deg, #5fc3fe 0%, #15f3fe 100%);
+}
+
+.stmp-btn.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stmp-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.stmp-btn.danger {
+    background: linear-gradient(135deg, #ff5c5c 0%, #d81b60 100%);
+    color: white;
+}
+
+.stmp-btn.small {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+}
+
+.stmp-btn.icon {
+    padding: 6px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    color: white;
+    width: auto;
+}
+
+.stmp-btn.icon:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.stmp-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+    margin: 8px 0;
+}
+
+.stmp-divider::before,
+.stmp-divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stmp-divider::before {
+    margin-right: .5em;
+}
+
+.stmp-divider::after {
+    margin-left: .5em;
+}
+
+.stmp-room-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#stmp-room-code-display {
+    color: #00f2fe;
+    letter-spacing: 2px;
+    font-size: 1.3rem;
+}
+
+#stmp-user-list {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 12px;
+    min-height: 80px;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px inset rgba(255, 255, 255, 0.05);
+}
+
+.stmp-user {
+    padding: 8px 12px;
+    margin-bottom: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+}
+
+.stmp-user:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.stmp-room-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stmp-no-rooms {
+    text-align: center;
+    padding: 20px;
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+}
+
+/* Notification Popups */
+.stmp-notif {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+    background: rgba(20, 20, 25, 0.95);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    z-index: 9999;
+    font-weight: 500;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.stmp-notif.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+/* Enhancing visually appended messages */
+.mes.user_mes .mes_text strong {
+    color: var(--user-color, #64b5f6);
+}

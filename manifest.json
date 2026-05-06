@@ -1,0 +1,12 @@
+{
+    "display_name": "ST Multiplayer",
+    "loading_order": 160,
+    "requires": [],
+    "optional": [],
+    "js": "index.js",
+    "css": "style.css",
+    "author": "Custom",
+    "version": "1.0.0",
+    "homePage": "",
+    "description": "Multiplayer extension for SillyTavern using a relay server."
+}
